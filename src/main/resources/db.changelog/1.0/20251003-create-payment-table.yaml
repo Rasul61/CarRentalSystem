@@ -16,13 +16,9 @@ databaseChangeLog:
               - column:
                   name: rental_id
                   type: BIGINT
-                  constraints:
-                    nullable: false
               - column:
                   name: amount
                   type: DOUBLE
-                  constraints:
-                    nullable: false
               - column:
                   name: paid_at
                   type: TIMESTAMP

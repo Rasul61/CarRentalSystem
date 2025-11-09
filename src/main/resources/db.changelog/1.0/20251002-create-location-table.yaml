@@ -16,16 +16,12 @@ databaseChangeLog:
               - column:
                   name: name
                   type: VARCHAR(255)
-                  constraints:
-                    nullable: false
               - column:
                   name: city
                   type: VARCHAR(255)
                   constraints:
-                    nullable: false
                     unique: true
               - column:
                   name: address
                   type: VARCHAR(255)
-                  constraints:
-                    nullable: false
+

@@ -16,31 +16,31 @@ databaseChangeLog:
               - column:
                   name: brand
                   type: VARCHAR(255)
+                  constraints:
+                    nullable: true
               - column:
                   name: model
                   type: VARCHAR(255)
                   constraints:
-                    nullable: false
                     unique: true
               - column:
                   name: year
                   type: INTEGER
                   constraints:
-                    nullable: false
+                    nullable: true
               - column:
                   name: plate_number
                   type: VARCHAR(255)
                   constraints:
-                    nullable: false
                     unique: true
               - column:
                   name: price_per_day
                   type: DOUBLE
                   constraints:
-                    nullable: false
+                    nullable: true
               - column:
                   name: status
                   type: VARCHAR(50)
                   constraints:
-                    nullable: false
+                    nullable: true
 

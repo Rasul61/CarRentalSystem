@@ -14,20 +14,16 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: fullName
+                  name: full_name
                   type: VARCHAR(255)
-                  constraints:
-                    nullable: false
               - column:
                   name: email
                   type: VARCHAR(255)
                   constraints:
-                    nullable: false
                     unique: true
               - column:
                   name: phone
                   type: VARCHAR(255)
                   constraints:
-                    nullable: false
                     unique: true
 

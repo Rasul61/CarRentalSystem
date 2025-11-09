@@ -1,3 +1,11 @@
 databaseChangeLog:
-  - includeAll:
-      path: liquibase/1.0
+  - include:
+      file: db.changelog/1.0/20251000-create-car-table.yaml
+  - include:
+      file: db.changelog/1.0/20251001-create-customer-table.yaml
+  - include:
+      file: db.changelog/1.0/20251002-create-location-table.yaml
+  - include:
+      file: db.changelog/1.0/20251004-create-rental-table.yaml
+  - include:
+      file: db.changelog/1.0/20251003-create-payment-table.yaml
