@@ -14,5 +14,4 @@ public class CarRequest {
     Integer year;
     String plateNumber;
     Double pricePerDay;
-    CarStatus status;
 }

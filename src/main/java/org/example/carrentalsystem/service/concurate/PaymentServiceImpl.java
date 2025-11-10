@@ -34,7 +34,7 @@ public class PaymentServiceImpl implements PaymentService {
         Rental rental = rentalRepository.findById(paymentRequest.getRentalId()).
                 orElseThrow(() -> new NotFoundException("Not found rental with this id" + paymentRequest.getRentalId()));
         if (paymentRequest.getAmount() < rental.getCar().getPricePerDay()) {
-            throw new NotEnoughMoneyException("Fail operation ,need :" + (rental.getCar().getPricePerDay() - paymentRequest.getAmount()));
+            throw new NotEnoughMoneyException("Fail operation ,need :" + (rental.getTotalPrice() - paymentRequest.getAmount()));
         }
         if (rental.getCar().getStatus() == RENTED || rental.getCar().getStatus() == SERVICE) {
             throw new RuntimeException("This car unavailable :" + rental.getCar().getBrand());

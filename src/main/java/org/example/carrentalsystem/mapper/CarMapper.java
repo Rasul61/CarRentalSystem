@@ -15,7 +15,6 @@ public class CarMapper {
                 year(carRequest.getYear()).
                 plateNumber(carRequest.getPlateNumber()).
                 pricePerDay(carRequest.getPricePerDay()).
-                status(carRequest.getStatus()).
                 build();
     }
 

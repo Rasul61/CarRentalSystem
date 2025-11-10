@@ -24,6 +24,7 @@ public class CarServiceImpl implements CarService {
     @Override
     public CarResponse createCar(CarRequest carRequest) {
         Car car = requestToEntity(carRequest);
+        car.setStatus(CarStatus.AVAILABLE);
         carRepository.save(car);
 
         return entityToResponse(car);
@@ -91,9 +92,7 @@ public class CarServiceImpl implements CarService {
         if (carRequest.getPricePerDay() != null) {
             car.setPricePerDay(carRequest.getPricePerDay());
         }
-        if (carRequest.getStatus() != null) {
-            car.setStatus(carRequest.getStatus());
-        }
+
         carRepository.save(car);
 
         return entityToResponse(car);

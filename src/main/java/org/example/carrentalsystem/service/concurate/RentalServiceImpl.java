@@ -35,7 +35,7 @@ public class RentalServiceImpl implements RentalService {
     public RentalResponse createRental(RentalRequest rentalRequest) {
         Rental rental = rentalRepository.save(rentalMapper.requestToEntity(rentalRequest));
         rental.setStartDate(LocalDate.now());
-        rental.setEndDate(LocalDate.now().plusDays(1));
+        rental.setEndDate(rentalRequest.getEndDate());
         long days = ChronoUnit.DAYS.between(rental.getStartDate(), rental.getEndDate());
         rental.setTotalPrice(rental.getCar().getPricePerDay() * days);
 
@@ -84,7 +84,7 @@ public class RentalServiceImpl implements RentalService {
             rental.setReturnLocation(location);
         }
 
-        return null;
+        return entityToResponse(rental);
     }
 
     @Override
